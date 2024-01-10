@@ -14,7 +14,7 @@ export default function Home() {
             different roast types and origins, expertly roasted in small batches
             and shipped fresh weekly.
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14">
             {coffees.map((coffee) => <Card key={coffee.id} {...coffee} />)}
           </div>
         </div>

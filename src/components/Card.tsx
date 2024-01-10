@@ -4,6 +4,8 @@ interface CardProps {
   label: string;
   url: string;
   price: number;
+  soldOut: boolean;
+  popular: boolean;
   rating?: number;
   votes?: number;
 }
@@ -11,9 +13,15 @@ export default function Card(props: CardProps) {
   return (
     <div className="space-y-3">
       <div
-        className="w-full h-40 bg-cover bg-center rounded-lg"
+        className="w-full h-40 px-2 py-1 bg-cover bg-center rounded-lg"
         style={{ backgroundImage: `url(${props.url})` }}
-      />
+      >
+        {props.popular ? (
+          <span className="px-3 py-1 bg-yellow text-xs rounded-full">Popular</span>
+        ) : (
+          <></>
+        )}
+      </div>
       <div>
         <div className="flex justify-between items-center">
           <h4 className="text-white text-md">{props.label}</h4>
@@ -21,24 +29,24 @@ export default function Card(props: CardProps) {
             ${props.price.toFixed(2)}
           </p>
         </div>
-        <div className="flex">
+        <div className="flex justify-between items-center text-sm">
           <div className="flex items-center">
             {props.votes && props.rating ? (
               <>
-                <Image src="/star-fill.svg" alt="" width={24} height={24} />
-                <p className="text-md text-white">
+                <Image src="/star-fill.svg" alt="" width={20} height={20} />
+                <p className="text-white">
                   <span>{props.rating.toFixed(1)}</span>
                   <span className="text-gray"> ({props.votes} votes)</span>
                 </p>
               </>
             ) : (
               <>
-                <Image src="/star.svg" alt="" width={24} height={24} />
-                <p className="text-xs text-gray">No Ratings</p>
+                <Image src="/star.svg" alt="" width={20} height={20} />
+                <p className="text-gray">No Ratings</p>
               </>
             )}
-            <p></p>
           </div>
+          {props.soldOut ? <p className="text-orange">Sold out</p> : <></>}
         </div>
       </div>
     </div>
