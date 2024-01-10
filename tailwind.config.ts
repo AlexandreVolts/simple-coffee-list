@@ -19,7 +19,17 @@ const config: Config = {
       },
       backgroundImage: {
         banner: "url('/bg-cafe.jpg')",
-      }
+      },
+      fontFamily: {
+        dmsans: ["DM Sans"],
+      },
+      fontSize: {
+        xs: "0.625rem",
+        sm: "0.75rem",
+        md: "0.875rem",
+        lg: "1rem",
+        xl: "2rem",
+      },
     },
   },
   plugins: [],
