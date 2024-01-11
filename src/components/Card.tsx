@@ -13,7 +13,7 @@ export default function Card(props: CardProps) {
   return (
     <div className="space-y-3">
       <div
-        className="w-full h-40 px-2 py-1 bg-cover bg-center rounded-lg"
+        className="w-full h-40 px-2 py-1 bg-cover bg-center rounded-xl"
         style={{ backgroundImage: `url(${props.url})` }}
       >
         {props.popular ? (
@@ -22,7 +22,7 @@ export default function Card(props: CardProps) {
           <></>
         )}
       </div>
-      <div>
+      <div className="space-y-1.5">
         <div className="flex justify-between items-center">
           <h4 className="text-white text-md">{props.label}</h4>
           <p className="inline-block px-2 py-0.5 bg-beige rounded text-brown text-center text-sm">
