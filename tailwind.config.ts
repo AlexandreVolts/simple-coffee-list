@@ -30,6 +30,9 @@ const config: Config = {
         lg: "1rem",
         xl: "2rem",
       },
+      screens: {
+        "xs": "480px"
+      }
     },
   },
   plugins: [],
