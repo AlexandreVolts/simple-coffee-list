@@ -19,6 +19,7 @@ const config: Config = {
       },
       backgroundImage: {
         banner: "url('/bg-cafe.jpg')",
+        vector: "url('/vector.svg')",
       },
       fontFamily: {
         dmsans: ["DM Sans"],
